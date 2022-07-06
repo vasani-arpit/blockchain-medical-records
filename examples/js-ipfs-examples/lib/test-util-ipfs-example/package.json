@@ -1,0 +1,36 @@
+{
+  "name": "test-util-ipfs-example",
+  "version": "1.0.2",
+  "description": "Utilities to test ipfs examples",
+  "type": "module",
+  "keywords": [
+    "test",
+    "examples",
+    "ipfs"
+  ],
+  "bugs": {
+    "url": "https://github.com/ipfs-examples/js-ipfs-examples/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipfs-examples/js-ipfs-examples.git"
+  },
+  "license": "MIT",
+  "author": "Oliverio Sousa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "start": "node server.js",
+    "clean": "echo Nothing to clean..."
+  },
+  "dependencies": {
+    "execa": "^6.0.0",
+    "fs-extra": "^10.1.0",
+    "ipfsd-ctl": "^11.0.1",
+    "polka": "^0.5.2",
+    "sirv": "^2.0.2",
+    "stoppable": "^1.1.0",
+    "uint8arrays": "^3.0.0",
+    "which": "^2.0.2"
+  }
+}
