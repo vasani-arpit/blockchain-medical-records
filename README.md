@@ -62,3 +62,18 @@ npx hardhat node
 node scripts/sample-script.js
 npx hardhat help
 ```
+
+
+## Run IPFS example 
+
+```
+cd examples/js-ipfs-examples/examples/browser-script-tag
+```
+
+```
+npm i
+```
+
+```
+npm run serve
+```

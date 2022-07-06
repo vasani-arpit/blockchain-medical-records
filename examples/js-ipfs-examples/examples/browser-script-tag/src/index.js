@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const node = await Ipfs.create({ repo: 'ipfs-' + Math.random() })
   window.node = node
 
-  const status = node.isOnline() ? 'online' : 'offline'
+  const status = node.isOnline() ? '✅ Online' : '🛑'
   const id = await node.id()
 
   console.log(`Node status: ${status}`)
@@ -24,4 +24,33 @@ document.addEventListener('DOMContentLoaded', async () => {
   // You can write more code here to use it. Use methods like
   // node.add, node.get. See the API docs here:
   // https://github.com/ipfs/js-ipfs/tree/master/packages/interface-ipfs-core
+
 })
+console.log(globalThis)
+globalThis.storeData = async () => {
+  // function storeData() {
+  const content = document.querySelector('#contents').value
+  if (content == "") {
+    alert("Please enter contents.")
+    return
+  }
+
+  const results = await node.add(content)
+  document.querySelector("#message").innerHTML = `Successfully added. Here is your id: ${results.path}`
+}
+
+globalThis.readFile = async () => {
+
+  const bid = document.querySelector("#bid").value
+
+  if (!bid) {
+    alert("Please enter the id")
+    return
+  }
+
+  for await (const data of node.cat(bid)) {
+    alert(data.toString())
+  }
+
+
+}
