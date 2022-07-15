@@ -1,0 +1,68 @@
+{
+	"name": "dcontent",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@tailwindcss/aspect-ratio": "^0.4.0",
+		"@tailwindcss/forms": "^0.5.0",
+		"@tailwindcss/line-clamp": "^0.3.1",
+		"@tailwindcss/typography": "^0.5.2",
+		"dotenv": "^16.0.0",
+		"ipfs-http-client": "^56.0.2",
+		"node-libs-browser": "^2.2.1",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0",
+		"react-router-dom": "^6.3.0",
+		"react-scripts": "5.0.1"
+	},
+	"scripts": {
+		"start": "react-app-rewired start",
+		"build": "react-app-rewired build",
+		"test": "react-app-rewired test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@babel/core": "^7.17.9",
+		"@babel/preset-env": "^7.16.11",
+		"@babel/preset-react": "^7.16.7",
+		"assert": "^2.0.0",
+		"autoprefixer": "^10.4.4",
+		"babel-loader": "^8.2.5",
+		"buffer": "^6.0.3",
+		"crypto-browserify": "^3.12.0",
+		"css-loader": "^6.7.1",
+		"file-loader": "^6.2.0",
+		"html-webpack-plugin": "^5.5.0",
+		"https-browserify": "^1.0.0",
+		"os-browserify": "^0.3.0",
+		"postcss": "^8.4.12",
+		"prettier-plugin-tailwindcss": "^0.1.10",
+		"process": "^0.11.10",
+		"react-app-rewired": "^2.2.1",
+		"stream-browserify": "^3.0.0",
+		"stream-http": "^3.2.0",
+		"style-loader": "^3.3.1",
+		"tailwindcss": "^3.0.24",
+		"url": "^0.11.0",
+		"webpack": "^5.72.0",
+		"webpack-cli": "^4.9.2"
+	}
+}
