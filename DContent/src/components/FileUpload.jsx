@@ -1,6 +1,7 @@
 import Image from "./Image";
 import { useState } from "react";
 import { UploadImage } from "../API";
+import { QRCodeCanvas } from "qrcode.react";
 
 const UpdatePost = () => {
 
@@ -49,11 +50,33 @@ const UpdatePost = () => {
 					{
 						files.map((data) => {
 							return (
-								<a href={`https://ipfs.io/ipfs/${data.hash.path}`} target="_blank" rel="noreferrer">
+								<a key={data.hash} href={`http://localhost:8080/ipfs/${data.hash.path}?filename=${data.fileName}`} target="_blank" rel="noreferrer">
 
 									{data.fileName}
 
 								</a>
+							)
+						})
+					}
+				</div>
+
+				<div className="flex flex-col gap-4 overflow-auto">
+					<h1 className="text-2xl">QR Code</h1>
+
+					{
+						files.map((data, i) => {
+							return (
+								<span>
+									<QRCodeCanvas
+										id="qrCode"
+										key={i}
+										value={`https://ipfs.io/ipfs/${data.hash.path}?filename=${data.hash.fileName}`}
+										size={300}
+										level={"H"}
+									/>
+									<p>{data.fileName}</p>
+								</span>
+
 							)
 						})
 					}

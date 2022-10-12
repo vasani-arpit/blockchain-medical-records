@@ -49,7 +49,8 @@ globalThis.readFile = async () => {
   }
 
   for await (const data of node.cat(bid)) {
-    alert(data.toString())
+    var enc = new TextDecoder("utf-8");
+    alert(enc.decode(data))
   }
 
 
