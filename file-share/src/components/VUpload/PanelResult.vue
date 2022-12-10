@@ -62,7 +62,7 @@
 import { ref, computed, inject } from "vue";
 
 import { useStore } from "@src/store";
-import { fileSize, copyToClipboard, generateLink, generateShortLink } from "@src/services/helpers";
+import { fileSize, copyToClipboard, generateLink, generateShortLink, encryptTheHash } from "@src/services/helpers";
 
 import SearchResult from "@src/components/VUpload/SearchResult.vue";
 
@@ -98,11 +98,19 @@ export default {
         notyf.success(`Shorten Link has successfully generated.`);
       }
     }
-    const copyFileLink = (item) => {
-      const url = generateLink(item);
-      copyToClipboard(url);
+    const copyFileLink = async (item) => {
+      try {
+        const resultDataObject = await encryptTheHash(item)
+        console.log(resultDataObject)
+        const url = generateLink(resultDataObject.encryptedData);
+        copyToClipboard(url);
+        notyf.success("Copied to clipboard!");
+      } catch (error) {
+        console.error(error)
+        notyf.error("Failed to encrypt the data");
+      }
 
-      notyf.success("Copied to clipboard!");
+
     }
     const onSearchChanged = ($event) => {
       search.value = $event.target.value;

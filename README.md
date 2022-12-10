@@ -77,3 +77,12 @@ npm i
 ```
 npm run serve
 ```
+
+
+## Steps to setup locally
+
+1. `Git clone` or `git pull`
+1. Run ipfs deamon in your local
+2. `cd file-share`
+3. `npm i`
+4. `npm run dev`

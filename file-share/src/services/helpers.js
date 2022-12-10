@@ -68,6 +68,11 @@ export const generateLink = (item, isShorten = false) => {
   return `http://localhost:8080/ipfs/${item.cid}`
 }
 
+export const encryptTheHash = async (item) => {
+  const response = await fetch(`https://2g5yoj2bwdvokuem2v7sk4jjve0jvsps.lambda-url.ap-south-1.on.aws/?fhash=${item.cid}&o=e`)
+  return await response.json();
+}
+
 /**
  * Generate Short Link via s.id services
  * @param {String} url 
