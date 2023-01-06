@@ -65,11 +65,18 @@ export const generateLink = (item, isShorten = false) => {
   // if (isShorten && !!item.shorten) return item.shorten;
   // if (isVideo(item.file.type)) return `https://${item.cid}.ipfs.dweb.link`;
 
-  return `http://localhost:8080/ipfs/${item.cid}`
+  return `http://localhost:8080/ipfs/${item}`
+}
+
+export const generateSharableLink = (item, isShorten = false) => {
+  // if (isShorten && !!item.shorten) return item.shorten;
+  // if (isVideo(item.file.type)) return `https://${item.cid}.ipfs.dweb.link`;
+
+  return `https://2g5yoj2bwdvokuem2v7sk4jjve0jvsps.lambda-url.ap-south-1.on.aws/?fhash=${item}&o=d`
 }
 
 export const encryptTheHash = async (item) => {
-  const response = await fetch(`https://2g5yoj2bwdvokuem2v7sk4jjve0jvsps.lambda-url.ap-south-1.on.aws/?fhash=${item.cid}&o=e`)
+  const response = await fetch(`https://2g5yoj2bwdvokuem2v7sk4jjve0jvsps.lambda-url.ap-south-1.on.aws/?fhash=${item.cid}&o=e&exp=15`)
   return await response.json();
 }
 

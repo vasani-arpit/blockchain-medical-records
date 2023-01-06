@@ -62,7 +62,7 @@
 import { ref, computed, inject } from "vue";
 
 import { useStore } from "@src/store";
-import { fileSize, copyToClipboard, generateLink, generateShortLink, encryptTheHash } from "@src/services/helpers";
+import { fileSize, copyToClipboard, generateLink, generateShortLink, encryptTheHash, generateSharableLink } from "@src/services/helpers";
 
 import SearchResult from "@src/components/VUpload/SearchResult.vue";
 
@@ -102,7 +102,7 @@ export default {
       try {
         const resultDataObject = await encryptTheHash(item)
         console.log(resultDataObject)
-        const url = generateLink(resultDataObject.encryptedData);
+        const url = generateSharableLink(resultDataObject.encryptedData);
         copyToClipboard(url);
         notyf.success("Copied to clipboard!");
       } catch (error) {
