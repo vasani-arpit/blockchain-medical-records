@@ -64,8 +64,9 @@ export const isVideo = (type) => {
 export const generateLink = (item, isShorten = false) => {
   // if (isShorten && !!item.shorten) return item.shorten;
   // if (isVideo(item.file.type)) return `https://${item.cid}.ipfs.dweb.link`;
+  // console.log({ item })
 
-  return `http://localhost:8080/ipfs/${item}`
+  return `http://localhost:8080/ipfs/${item.cid}`
 }
 
 export const generateSharableLink = (item, isShorten = false) => {
